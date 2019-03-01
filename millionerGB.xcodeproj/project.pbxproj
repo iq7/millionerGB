@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D9E9FEE822294B6F00203990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E9FEE722294B6F00203990 /* AppDelegate.swift */; };
-		D9E9FEEA22294B6F00203990 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E9FEE922294B6F00203990 /* ViewController.swift */; };
-		D9E9FEED22294B6F00203990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E9FEEB22294B6F00203990 /* Main.storyboard */; };
+		D9E9FEEA22294B6F00203990 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E9FEE922294B6F00203990 /* GameViewController.swift */; };
+		D9E9FEED22294B6F00203990 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E9FEEB22294B6F00203990 /* Game.storyboard */; };
 		D9E9FEEF22294B7000203990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E9FEEE22294B7000203990 /* Assets.xcassets */; };
 		D9E9FEF222294B7000203990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E9FEF022294B7000203990 /* LaunchScreen.storyboard */; };
 		D9E9FEFD22294B7000203990 /* millionerGBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E9FEFC22294B7000203990 /* millionerGBTests.swift */; };
@@ -36,8 +36,8 @@
 /* Begin PBXFileReference section */
 		D9E9FEE422294B6F00203990 /* millionerGB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = millionerGB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E9FEE722294B6F00203990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9E9FEE922294B6F00203990 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D9E9FEEC22294B6F00203990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D9E9FEE922294B6F00203990 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D9E9FEEC22294B6F00203990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Game.storyboard; sourceTree = "<group>"; };
 		D9E9FEEE22294B7000203990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9E9FEF122294B7000203990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9E9FEF322294B7000203990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				D9E9FEE722294B6F00203990 /* AppDelegate.swift */,
-				D9E9FEE922294B6F00203990 /* ViewController.swift */,
-				D9E9FEEB22294B6F00203990 /* Main.storyboard */,
+				D9E9FEE922294B6F00203990 /* GameViewController.swift */,
+				D9E9FEEB22294B6F00203990 /* Game.storyboard */,
 				D9E9FEEE22294B7000203990 /* Assets.xcassets */,
 				D9E9FEF022294B7000203990 /* LaunchScreen.storyboard */,
 				D9E9FEF322294B7000203990 /* Info.plist */,
@@ -231,7 +231,7 @@
 			files = (
 				D9E9FEF222294B7000203990 /* LaunchScreen.storyboard in Resources */,
 				D9E9FEEF22294B7000203990 /* Assets.xcassets in Resources */,
-				D9E9FEED22294B6F00203990 /* Main.storyboard in Resources */,
+				D9E9FEED22294B6F00203990 /* Game.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9E9FEEA22294B6F00203990 /* ViewController.swift in Sources */,
+				D9E9FEEA22294B6F00203990 /* GameViewController.swift in Sources */,
 				D9E9FEE822294B6F00203990 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,12 +293,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D9E9FEEB22294B6F00203990 /* Main.storyboard */ = {
+		D9E9FEEB22294B6F00203990 /* Game.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D9E9FEEC22294B6F00203990 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Game.storyboard;
 			sourceTree = "<group>";
 		};
 		D9E9FEF022294B7000203990 /* LaunchScreen.storyboard */ = {
