@@ -8,9 +8,13 @@
 
 import UIKit
 
-protocol GameDelegate: class {
-    
+protocol GameDelegate: AnyObject {
+
     func gameDidEnd(with result: Int, isWin: Bool)
+}
+
+protocol GameViewControllerDeligate: AnyObject {
+    func update(with question: Question)
 }
 
 final class GameViewController: UIViewController {
@@ -28,59 +32,45 @@ final class GameViewController: UIViewController {
     @IBOutlet weak var marginForErrorButton: UIButton!
     
     private var questions: [Question] = []
-    private var numberQuestion = 0
-    private var isReadyQuestion = false
     
     weak var delegate: GameDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameInit()
-    }
-
-    private func gameInit() {
+        
         questionsInit()
-        numberQuestion = 0
-        askAQuestion(number: numberQuestion)
+        let gameSession = GameSession(with: questions, and: self)
+        Game.shared.gameSession = gameSession
+        Game.shared.gameSession?.askAQuestion()
     }
     
-    private func askAQuestion(number: Int) {
-        if number >= questions.count { return }
-        questionLabel.text = questions[number].textQuestion
-        answerAButton.setTitle("A: " + questions[number].arrayAnswers[0], for: .normal)
-        answerBButton.setTitle("B: " + questions[number].arrayAnswers[1], for: .normal)
-        answerCButton.setTitle("C: " + questions[number].arrayAnswers[2], for: .normal)
-        answerDButton.setTitle("D: " + questions[number].arrayAnswers[3], for: .normal)
-        isReadyQuestion = true
-    }
-    
-    private func levelUp() {
-        numberQuestion += 1
-        if numberQuestion < questions.count {
-            askAQuestion(number: numberQuestion)
-        } else {
-            gameOver()
-        }
-    }
-    
-    private func gameOver() {
-        if numberQuestion < questions.count - 1 {
-            self.delegate?.gameDidEnd(with: numberQuestion, isWin: false)
-        } else {
-            self.delegate?.gameDidEnd(with: numberQuestion, isWin: true)
-        }
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    private func reply(answer: numberAnswer) {
-        if !isReadyQuestion { return }
-        isReadyQuestion = false
-        if questions[numberQuestion].answer == answer {
-            levelUp()
-        } else {
-            gameOver()
-        }
-    }
+//    private func levelUp() {
+//        numberQuestion += 1
+//        if numberQuestion < questions.count {
+//            askAQuestion(number: numberQuestion)
+//        } else {
+//            gameOver()
+//        }
+//    }
+//
+//    private func gameOver() {
+//        if numberQuestion < questions.count - 1 {
+//            self.delegate?.gameDidEnd(with: numberQuestion, isWin: false)
+//        } else {
+//            self.delegate?.gameDidEnd(with: numberQuestion, isWin: true)
+//        }
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//
+//    private func reply(answer: numberAnswer) {
+//        if !isReadyQuestion { return }
+//        isReadyQuestion = false
+//        if questions[numberQuestion].answer == answer {
+//            levelUp()
+//        } else {
+//            gameOver()
+//        }
+//    }
 
     private func questionsInit() {
         questions.append(Question(textQuestion: "Как правильно закончить пословицу: «Не откладывай на завтра то, что можно…»?",
@@ -134,19 +124,19 @@ final class GameViewController: UIViewController {
     }
 
     @IBAction func answerAButtonPressed(_ sender: Any) {
-        reply(answer: .answerA)
+//        reply(answer: .answerA)
     }
     
     @IBAction func answerBButtonPressed(_ sender: Any) {
-        reply(answer: .answerB)
+//        reply(answer: .answerB)
     }
     
     @IBAction func answerCButtonPressed(_ sender: Any) {
-        reply(answer: .answerC)
+//        reply(answer: .answerC)
     }
     
     @IBAction func answerDButtonPressed(_ sender: Any) {
-        reply(answer: .answerD)
+//        reply(answer: .answerD)
     }
     
     @IBAction func fiftyFiftyButtonPressed(_ sender: Any) {
@@ -159,5 +149,16 @@ final class GameViewController: UIViewController {
     }
     
     @IBAction func marginForErrorButtonPressed(_ sender: Any) {
+    }
+}
+
+extension GameViewController: GameViewControllerDeligate {
+
+    func update(with question: Question) {
+        questionLabel.text = question.textQuestion
+        answerAButton.setTitle("A: " + question.arrayAnswers[0], for: .normal)
+        answerBButton.setTitle("B: " + question.arrayAnswers[1], for: .normal)
+        answerCButton.setTitle("C: " + question.arrayAnswers[2], for: .normal)
+        answerDButton.setTitle("D: " + question.arrayAnswers[3], for: .normal)
     }
 }
