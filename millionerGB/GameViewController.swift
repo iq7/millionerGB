@@ -39,7 +39,6 @@ final class GameViewController: UIViewController {
     }
 
     private func gameInit() {
-        self.delegate = self
         questionsInit()
         numberQuestion = 0
         askAQuestion(number: numberQuestion)
@@ -66,10 +65,11 @@ final class GameViewController: UIViewController {
     
     private func gameOver() {
         if numberQuestion < questions.count - 1 {
-            self.gameDidEnd(with: numberQuestion, isWin: false)
+            self.delegate?.gameDidEnd(with: numberQuestion, isWin: false)
         } else {
-            self.gameDidEnd(with: numberQuestion, isWin: true)
+            self.delegate?.gameDidEnd(with: numberQuestion, isWin: true)
         }
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func reply(answer: numberAnswer) {
@@ -159,14 +159,5 @@ final class GameViewController: UIViewController {
     }
     
     @IBAction func marginForErrorButtonPressed(_ sender: Any) {
-    }
-}
-
-// MARK: - GameSceneDelegate
-
-extension GameViewController: GameDelegate {
-
-    func gameDidEnd(with result: Int, isWin: Bool) {
-        self.dismiss(animated: true, completion: nil)
     }
 }

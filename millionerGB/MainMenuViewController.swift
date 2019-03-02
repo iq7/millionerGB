@@ -25,6 +25,7 @@ class MainMenuViewController: UIViewController {
         switch segue.identifier {
         case "startGameSegue":
             guard let destination = segue.destination as? GameViewController else { return }
+            destination.delegate = self
         default:
             break
         }
