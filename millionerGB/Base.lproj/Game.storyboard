@@ -29,7 +29,7 @@
                                         </constraints>
                                         <state key="normal" title="Играть"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="EUo-Vf-TRf"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="startGameSegue" id="EUo-Vf-TRf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zza-mX-ax7" userLabel="ResultsButton">
@@ -62,6 +62,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bDM-bP-bKV"/>
                     </view>
+                    <connections>
+                        <outlet property="resultsGameButton" destination="Zza-mX-ax7" id="zbp-lt-JMg"/>
+                        <outlet property="startGameButton" destination="cBQ-SU-CL7" id="wvV-y1-8Ki"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7j-Rs-hK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +109,7 @@
                                         </constraints>
                                         <state key="normal" title="B: AnswerText"/>
                                         <connections>
-                                            <action selector="AnswerBButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rjd-RN-qW0"/>
+                                            <action selector="answerBButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rjd-RN-qW0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPb-YG-Xl4" userLabel="AnswerBButton">
@@ -116,7 +120,7 @@
                                         </constraints>
                                         <state key="normal" title="A: AnswerText"/>
                                         <connections>
-                                            <action selector="AnswerAButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zAD-hC-XZe"/>
+                                            <action selector="answerAButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zAD-hC-XZe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZO-cz-x2M" userLabel="AnswerCButton">
@@ -127,7 +131,7 @@
                                         </constraints>
                                         <state key="normal" title="C: AnswerText"/>
                                         <connections>
-                                            <action selector="AnswerCButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXS-nM-pRW"/>
+                                            <action selector="answerCButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXS-nM-pRW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHp-b1-y6d" userLabel="AnswerDButton">
@@ -138,7 +142,7 @@
                                         </constraints>
                                         <state key="normal" title="D: AnswerText"/>
                                         <connections>
-                                            <action selector="AnswerDButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aDE-5z-xTH"/>
+                                            <action selector="answerDButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aDE-5z-xTH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -170,7 +174,7 @@
                                         </constraints>
                                         <state key="normal" title="50:50"/>
                                         <connections>
-                                            <action selector="FiftyFiftyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iXK-v4-4z2"/>
+                                            <action selector="fiftyFiftyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iXK-v4-4z2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyW-8N-LHs" userLabel="CallToFriendButton">
@@ -181,7 +185,7 @@
                                         </constraints>
                                         <state key="normal" title="Call"/>
                                         <connections>
-                                            <action selector="CallToFriendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6pI-pV-Isb"/>
+                                            <action selector="callToFriendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6pI-pV-Isb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7P-MW-bJO" userLabel="MarginForErrorButton">
@@ -192,7 +196,7 @@
                                         </constraints>
                                         <state key="normal" title="Error"/>
                                         <connections>
-                                            <action selector="MarginForErrorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lnh-zP-gg6"/>
+                                            <action selector="marginForErrorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lnh-zP-gg6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIY-kf-3nB" userLabel="HallHelpButton">
@@ -203,7 +207,7 @@
                                         </constraints>
                                         <state key="normal" title="Hall"/>
                                         <connections>
-                                            <action selector="HallHelpButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Rg-80-tK5"/>
+                                            <action selector="hallHelpButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Rg-80-tK5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -244,15 +248,15 @@
                         <viewLayoutGuide key="safeArea" id="JzX-le-MD8"/>
                     </view>
                     <connections>
-                        <outlet property="AnswerAButton" destination="HPb-YG-Xl4" id="b9r-6g-AXe"/>
-                        <outlet property="AnswerBButton" destination="02h-H4-MaJ" id="pnp-xn-gEX"/>
-                        <outlet property="AnswerCButton" destination="SZO-cz-x2M" id="6uk-mH-acg"/>
-                        <outlet property="AnswerDButton" destination="GHp-b1-y6d" id="5fS-6Y-Tgq"/>
-                        <outlet property="CallToFriendButton" destination="xyW-8N-LHs" id="tbM-if-Hbb"/>
-                        <outlet property="FiftyFiftyButton" destination="D4R-ke-AL2" id="aIO-bI-A0g"/>
-                        <outlet property="HallHelpButton" destination="AIY-kf-3nB" id="Vn2-h1-MFb"/>
-                        <outlet property="MarginForErrorButton" destination="e7P-MW-bJO" id="qFt-O6-tbF"/>
-                        <outlet property="QuestionLabel" destination="eeq-ze-PGt" id="1Pc-ze-eKi"/>
+                        <outlet property="answerAButton" destination="HPb-YG-Xl4" id="b9r-6g-AXe"/>
+                        <outlet property="answerBButton" destination="02h-H4-MaJ" id="pnp-xn-gEX"/>
+                        <outlet property="answerCButton" destination="SZO-cz-x2M" id="6uk-mH-acg"/>
+                        <outlet property="answerDButton" destination="GHp-b1-y6d" id="5fS-6Y-Tgq"/>
+                        <outlet property="callToFriendButton" destination="xyW-8N-LHs" id="tbM-if-Hbb"/>
+                        <outlet property="fiftyFiftyButton" destination="D4R-ke-AL2" id="aIO-bI-A0g"/>
+                        <outlet property="hallHelpButton" destination="AIY-kf-3nB" id="Vn2-h1-MFb"/>
+                        <outlet property="marginForErrorButton" destination="e7P-MW-bJO" id="qFt-O6-tbF"/>
+                        <outlet property="questionLabel" destination="eeq-ze-PGt" id="1Pc-ze-eKi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,45 +10,44 @@ import UIKit
 
 class GameViewController: UIViewController {
 
-    @IBOutlet weak var QuestionLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
     
-    @IBOutlet weak var AnswerAButton: UIButton!
-    @IBOutlet weak var AnswerBButton: UIButton!
-    @IBOutlet weak var AnswerCButton: UIButton!
-    @IBOutlet weak var AnswerDButton: UIButton!
+    @IBOutlet weak var answerAButton: UIButton!
+    @IBOutlet weak var answerBButton: UIButton!
+    @IBOutlet weak var answerCButton: UIButton!
+    @IBOutlet weak var answerDButton: UIButton!
     
-    @IBOutlet weak var FiftyFiftyButton: UIButton!
-    @IBOutlet weak var CallToFriendButton: UIButton!
-    @IBOutlet weak var HallHelpButton: UIButton!
-    @IBOutlet weak var MarginForErrorButton: UIButton!
+    @IBOutlet weak var fiftyFiftyButton: UIButton!
+    @IBOutlet weak var callToFriendButton: UIButton!
+    @IBOutlet weak var hallHelpButton: UIButton!
+    @IBOutlet weak var marginForErrorButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func AnswerAButtonPressed(_ sender: Any) {
+    @IBAction func answerAButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func AnswerBButtonPressed(_ sender: Any) {
+    @IBAction func answerBButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func AnswerCButtonPressed(_ sender: Any) {
+    @IBAction func answerCButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func AnswerDButtonPressed(_ sender: Any) {
+    @IBAction func answerDButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func FiftyFiftyButtonPressed(_ sender: Any) {
+    @IBAction func fiftyFiftyButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func CallToFriendButtonPressed(_ sender: Any) {
+    @IBAction func callToFriendButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func HallHelpButtonPressed(_ sender: Any) {
+    @IBAction func hallHelpButtonPressed(_ sender: Any) {
     }
     
-    @IBAction func MarginForErrorButtonPressed(_ sender: Any) {
+    @IBAction func marginForErrorButtonPressed(_ sender: Any) {
     }
 }
 
