@@ -15,6 +15,7 @@
 		D9E9FEFD22294B7000203990 /* millionerGBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E9FEFC22294B7000203990 /* millionerGBTests.swift */; };
 		D9E9FF0822294B7000203990 /* millionerGBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E9FF0722294B7000203990 /* millionerGBUITests.swift */; };
 		D9ECC1CC222A674400BA0410 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1CB222A674400BA0410 /* MainMenuViewController.swift */; };
+		D9ECC1CE222A737B00BA0410 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1CD222A737B00BA0410 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D9E9FF0722294B7000203990 /* millionerGBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = millionerGBUITests.swift; sourceTree = "<group>"; };
 		D9E9FF0922294B7000203990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9ECC1CB222A674400BA0410 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		D9ECC1CD222A737B00BA0410 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D9E9FEF022294B7000203990 /* LaunchScreen.storyboard */,
 				D9E9FEF322294B7000203990 /* Info.plist */,
 				D9ECC1CB222A674400BA0410 /* MainMenuViewController.swift */,
+				D9ECC1CD222A737B00BA0410 /* Question.swift */,
 			);
 			path = millionerGB;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9ECC1CC222A674400BA0410 /* MainMenuViewController.swift in Sources */,
+				D9ECC1CE222A737B00BA0410 /* Question.swift in Sources */,
 				D9E9FEEA22294B6F00203990 /* GameViewController.swift in Sources */,
 				D9E9FEE822294B6F00203990 /* AppDelegate.swift in Sources */,
 			);
