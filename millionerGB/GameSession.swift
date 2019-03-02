@@ -18,7 +18,7 @@ class GameSession {
     weak var delegate: GameViewControllerDeligate?
     
     init(with questions: [Question], and delegate: GameViewControllerDeligate?) {
-        
+
         self.questions = questions
         self.questionCoun = questions.count
         
@@ -27,10 +27,37 @@ class GameSession {
     }
     
     func askAQuestion() {
+
         if numberQuestion >= questions.count { return }
-        print(questions[numberQuestion].textQuestion)
         self.delegate?.update(with: questions[numberQuestion])
-        numberQuestion += 1
     }
     
+    func reply(answer: numberAnswer) {
+
+        if questions[numberQuestion].answer == answer {
+            levelUp()
+        } else {
+            gameOver()
+        }
+    }
+    
+    private func levelUp() {
+        numberQuestion += 1
+        if numberQuestion < questionCoun {
+            askAQuestion()
+        } else {
+            gameOver()
+        }
+    }
+
+    private func gameOver() {
+        print("numberQuestion = \(numberQuestion)")
+        if numberQuestion < questionCoun {
+            self.delegate?.gameDidEnd(with: numberQuestion, isWin: false)
+        } else {
+            self.delegate?.gameDidEnd(with: numberQuestion, isWin: true)
+        }
+    }
+
+
 }

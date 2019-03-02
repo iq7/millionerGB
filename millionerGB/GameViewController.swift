@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol GameDelegate: AnyObject {
-
+protocol GameDelegate: class {
     func gameDidEnd(with result: Int, isWin: Bool)
 }
 
 protocol GameViewControllerDeligate: AnyObject {
     func update(with question: Question)
+    func gameDidEnd(with result: Int, isWin: Bool)
 }
 
 final class GameViewController: UIViewController {
@@ -43,34 +43,6 @@ final class GameViewController: UIViewController {
         Game.shared.gameSession = gameSession
         Game.shared.gameSession?.askAQuestion()
     }
-    
-//    private func levelUp() {
-//        numberQuestion += 1
-//        if numberQuestion < questions.count {
-//            askAQuestion(number: numberQuestion)
-//        } else {
-//            gameOver()
-//        }
-//    }
-//
-//    private func gameOver() {
-//        if numberQuestion < questions.count - 1 {
-//            self.delegate?.gameDidEnd(with: numberQuestion, isWin: false)
-//        } else {
-//            self.delegate?.gameDidEnd(with: numberQuestion, isWin: true)
-//        }
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//
-//    private func reply(answer: numberAnswer) {
-//        if !isReadyQuestion { return }
-//        isReadyQuestion = false
-//        if questions[numberQuestion].answer == answer {
-//            levelUp()
-//        } else {
-//            gameOver()
-//        }
-//    }
 
     private func questionsInit() {
         questions.append(Question(textQuestion: "Как правильно закончить пословицу: «Не откладывай на завтра то, что можно…»?",
@@ -124,19 +96,19 @@ final class GameViewController: UIViewController {
     }
 
     @IBAction func answerAButtonPressed(_ sender: Any) {
-//        reply(answer: .answerA)
+        Game.shared.gameSession?.reply(answer: .answerA)
     }
     
     @IBAction func answerBButtonPressed(_ sender: Any) {
-//        reply(answer: .answerB)
+        Game.shared.gameSession?.reply(answer: .answerB)
     }
     
     @IBAction func answerCButtonPressed(_ sender: Any) {
-//        reply(answer: .answerC)
+        Game.shared.gameSession?.reply(answer: .answerC)
     }
     
     @IBAction func answerDButtonPressed(_ sender: Any) {
-//        reply(answer: .answerD)
+        Game.shared.gameSession?.reply(answer: .answerD)
     }
     
     @IBAction func fiftyFiftyButtonPressed(_ sender: Any) {
@@ -160,5 +132,10 @@ extension GameViewController: GameViewControllerDeligate {
         answerBButton.setTitle("B: " + question.arrayAnswers[1], for: .normal)
         answerCButton.setTitle("C: " + question.arrayAnswers[2], for: .normal)
         answerDButton.setTitle("D: " + question.arrayAnswers[3], for: .normal)
+    }
+
+    func gameDidEnd(with result: Int, isWin: Bool) {
+        self.delegate?.gameDidEnd(with: result, isWin: isWin)
+        self.dismiss(animated: true, completion: nil)
     }
 }
