@@ -52,17 +52,27 @@
                                     <constraint firstItem="cBQ-SU-CL7" firstAttribute="leading" secondItem="P2R-0I-fnP" secondAttribute="leading" constant="10" id="x2i-xS-HZb"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4U-Pu-Bvm">
+                                <rect key="frame" x="10" y="537" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="P2R-0I-fnP" firstAttribute="centerX" secondItem="2eQ-Da-mBh" secondAttribute="centerX" id="4wT-lb-JWT"/>
+                            <constraint firstItem="T4U-Pu-Bvm" firstAttribute="leading" secondItem="bDM-bP-bKV" secondAttribute="leading" constant="10" id="7nR-5k-onT"/>
                             <constraint firstItem="bDM-bP-bKV" firstAttribute="trailing" secondItem="P2R-0I-fnP" secondAttribute="trailing" id="8sU-dZ-yFn"/>
                             <constraint firstItem="P2R-0I-fnP" firstAttribute="centerY" secondItem="2eQ-Da-mBh" secondAttribute="centerY" id="TU5-UI-N8o"/>
                             <constraint firstItem="P2R-0I-fnP" firstAttribute="leading" secondItem="bDM-bP-bKV" secondAttribute="leading" id="gmN-An-OD7"/>
+                            <constraint firstItem="bDM-bP-bKV" firstAttribute="bottom" secondItem="T4U-Pu-Bvm" secondAttribute="bottom" constant="10" id="wzd-5C-K5d"/>
+                            <constraint firstItem="bDM-bP-bKV" firstAttribute="trailing" secondItem="T4U-Pu-Bvm" secondAttribute="trailing" constant="10" id="ztp-vK-CN8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bDM-bP-bKV"/>
                     </view>
                     <connections>
+                        <outlet property="gameResultLabel" destination="T4U-Pu-Bvm" id="inW-LI-Qad"/>
                         <outlet property="resultsGameButton" destination="Zza-mX-ax7" id="zbp-lt-JMg"/>
                         <outlet property="startGameButton" destination="cBQ-SU-CL7" id="wvV-y1-8Ki"/>
                     </connections>

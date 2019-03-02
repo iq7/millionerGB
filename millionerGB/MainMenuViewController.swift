@@ -14,9 +14,30 @@ class MainMenuViewController: UIViewController {
     
     @IBOutlet weak var resultsGameButton: UIButton!
     
+    @IBOutlet weak var gameResultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        gameResultLabel.text = ""
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "startGameSegue":
+            guard let destination = segue.destination as? GameViewController else { return }
+        default:
+            break
+        }
+    }
+}
 
+extension MainMenuViewController: GameDelegate {
+    
+    func gameDidEnd(with result: Int, isWin: Bool) {
+        if isWin {
+            self.gameResultLabel.text = "Красавчик!"
+        } else {
+            self.gameResultLabel.text = "Вы запоролись на \(result + 1) вопросе."
+        }
+    }
 }

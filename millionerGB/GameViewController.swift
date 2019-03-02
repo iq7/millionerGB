@@ -8,7 +8,12 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+protocol GameDelegate: class {
+    
+    func gameDidEnd(with result: Int, isWin: Bool)
+}
+
+final class GameViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
     
@@ -25,19 +30,22 @@ class GameViewController: UIViewController {
     private var questions: [Question] = []
     private var numberQuestion = 0
     private var isReadyQuestion = false
+    
+    weak var delegate: GameDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gameInit()
     }
 
-    func gameInit() {
+    private func gameInit() {
+        self.delegate = self
         questionsInit()
         numberQuestion = 0
         askAQuestion(number: numberQuestion)
     }
     
-    func askAQuestion(number: Int) {
+    private func askAQuestion(number: Int) {
         if number >= questions.count { return }
         questionLabel.text = questions[number].textQuestion
         answerAButton.setTitle("A: " + questions[number].arrayAnswers[0], for: .normal)
@@ -47,20 +55,34 @@ class GameViewController: UIViewController {
         isReadyQuestion = true
     }
     
-    func levelUp() {
+    private func levelUp() {
         numberQuestion += 1
         if numberQuestion < questions.count {
             askAQuestion(number: numberQuestion)
         } else {
-            print("You WIN!!!")
+            gameOver()
         }
     }
     
-    func gameOver() {
-        print("Ты запоролся на \(numberQuestion + 1) вопросе.")
+    private func gameOver() {
+        if numberQuestion < questions.count - 1 {
+            self.gameDidEnd(with: numberQuestion, isWin: false)
+        } else {
+            self.gameDidEnd(with: numberQuestion, isWin: true)
+        }
     }
     
-    func questionsInit() {
+    private func reply(answer: numberAnswer) {
+        if !isReadyQuestion { return }
+        isReadyQuestion = false
+        if questions[numberQuestion].answer == answer {
+            levelUp()
+        } else {
+            gameOver()
+        }
+    }
+
+    private func questionsInit() {
         questions.append(Question(textQuestion: "Как правильно закончить пословицу: «Не откладывай на завтра то, что можно…»?",
                                   arrayAnswers: ["сделать сегодня", "сделать послезавтра", "сделать через месяц", "никогда не делать"],
                                   answer: .answerA))
@@ -76,6 +98,7 @@ class GameViewController: UIViewController {
         questions.append(Question(textQuestion: "Как звали старшую сестру императора Петра Первого?",
                                   arrayAnswers: ["Вера", "Надежда", "Любовь", "Софья"],
                                   answer: .answerD))
+/*
         questions.append(Question(textQuestion: "Что не бывает морским?",
                                   arrayAnswers: ["рельс", "огурец", "гребешок", "узел"],
                                   answer: .answerA))
@@ -106,46 +129,24 @@ class GameViewController: UIViewController {
         questions.append(Question(textQuestion: "Что такое лобогрейка?",
                                   arrayAnswers: ["жнейка", "шапка", "болезнь", "печка"],
                                   answer: .answerA))
+*/
+        
     }
 
     @IBAction func answerAButtonPressed(_ sender: Any) {
-        if !isReadyQuestion { return }
-        isReadyQuestion = false
-        if questions[numberQuestion].answer == .answerA {
-            levelUp()
-        } else {
-            gameOver()
-        }
+        reply(answer: .answerA)
     }
     
     @IBAction func answerBButtonPressed(_ sender: Any) {
-        if !isReadyQuestion { return }
-        isReadyQuestion = false
-        if questions[numberQuestion].answer == .answerB {
-            levelUp()
-        } else {
-            gameOver()
-        }
+        reply(answer: .answerB)
     }
     
     @IBAction func answerCButtonPressed(_ sender: Any) {
-        if !isReadyQuestion { return }
-        isReadyQuestion = false
-        if questions[numberQuestion].answer == .answerC {
-            levelUp()
-        } else {
-            gameOver()
-        }
+        reply(answer: .answerC)
     }
     
     @IBAction func answerDButtonPressed(_ sender: Any) {
-        if !isReadyQuestion { return }
-        isReadyQuestion = false
-        if questions[numberQuestion].answer == .answerD {
-            levelUp()
-        } else {
-            gameOver()
-        }
+        reply(answer: .answerD)
     }
     
     @IBAction func fiftyFiftyButtonPressed(_ sender: Any) {
@@ -161,3 +162,11 @@ class GameViewController: UIViewController {
     }
 }
 
+// MARK: - GameSceneDelegate
+
+extension GameViewController: GameDelegate {
+
+    func gameDidEnd(with result: Int, isWin: Bool) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
