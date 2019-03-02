@@ -22,10 +22,42 @@ class GameViewController: UIViewController {
     @IBOutlet weak var hallHelpButton: UIButton!
     @IBOutlet weak var marginForErrorButton: UIButton!
     
-    var questions: [Question] = []
+    private var questions: [Question] = []
+    private var numberQuestion = 0
+    private var isReadyQuestion = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        gameInit()
+    }
+
+    func gameInit() {
+        questionsInit()
+        numberQuestion = 0
+        askAQuestion(number: numberQuestion)
+    }
+    
+    func askAQuestion(number: Int) {
+        if number >= questions.count { return }
+        questionLabel.text = questions[number].textQuestion
+        answerAButton.setTitle("A: " + questions[number].arrayAnswers[0], for: .normal)
+        answerBButton.setTitle("B: " + questions[number].arrayAnswers[1], for: .normal)
+        answerCButton.setTitle("C: " + questions[number].arrayAnswers[2], for: .normal)
+        answerDButton.setTitle("D: " + questions[number].arrayAnswers[3], for: .normal)
+        isReadyQuestion = true
+    }
+    
+    func levelUp() {
+        numberQuestion += 1
+        if numberQuestion < questions.count {
+            askAQuestion(number: numberQuestion)
+        } else {
+            print("You WIN!!!")
+        }
+    }
+    
+    func gameOver() {
+        print("Ты запоролся на \(numberQuestion + 1) вопросе.")
     }
     
     func questionsInit() {
@@ -77,15 +109,43 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func answerAButtonPressed(_ sender: Any) {
+        if !isReadyQuestion { return }
+        isReadyQuestion = false
+        if questions[numberQuestion].answer == .answerA {
+            levelUp()
+        } else {
+            gameOver()
+        }
     }
     
     @IBAction func answerBButtonPressed(_ sender: Any) {
+        if !isReadyQuestion { return }
+        isReadyQuestion = false
+        if questions[numberQuestion].answer == .answerB {
+            levelUp()
+        } else {
+            gameOver()
+        }
     }
     
     @IBAction func answerCButtonPressed(_ sender: Any) {
+        if !isReadyQuestion { return }
+        isReadyQuestion = false
+        if questions[numberQuestion].answer == .answerC {
+            levelUp()
+        } else {
+            gameOver()
+        }
     }
     
     @IBAction func answerDButtonPressed(_ sender: Any) {
+        if !isReadyQuestion { return }
+        isReadyQuestion = false
+        if questions[numberQuestion].answer == .answerD {
+            levelUp()
+        } else {
+            gameOver()
+        }
     }
     
     @IBAction func fiftyFiftyButtonPressed(_ sender: Any) {
