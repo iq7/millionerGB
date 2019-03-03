@@ -8,18 +8,16 @@
 
 import Foundation
 
-class GameSession {
+final class GameSession {
 
     private var questions: [Question] = []
 
     var numberQuestion = 0
-    let questionCoun: Int
     
     weak var delegate: GameViewControllerDeligate?
     
     init(with delegate: GameViewControllerDeligate?) {
         self.questions = Questions().listQuestion
-        self.questionCoun = questions.count
         guard let delegate = delegate else { return }
         self.delegate = delegate
     }
@@ -43,7 +41,7 @@ class GameSession {
 
     private func levelUp() {
         numberQuestion += 1
-        if numberQuestion < questionCoun {
+        if numberQuestion < questions.count {
             askAQuestion()
         } else {
             gameOver()
@@ -51,7 +49,10 @@ class GameSession {
     }
 
     private func gameOver() {
-        if numberQuestion < questionCoun {
+        let record = Record(date: Date(), score: numberQuestion)
+        Game.shared.addRecord(record)
+        
+        if numberQuestion < questions.count {
             self.delegate?.gameDidEnd(with: numberQuestion, isWin: false)
         } else {
             self.delegate?.gameDidEnd(with: numberQuestion, isWin: true)

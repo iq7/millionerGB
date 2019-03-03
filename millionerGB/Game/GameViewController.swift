@@ -38,38 +38,39 @@ final class GameViewController: UIViewController {
         
         let gameSession = GameSession(with: self)
         Game.shared.gameSession = gameSession
-        Game.shared.gameSession?.start()
+        Game.shared.gameSession.start()
     }
 
-    @IBAction func answerAButtonPressed(_ sender: Any) {
-        Game.shared.gameSession?.reply(answer: .answerA)
+    @IBAction func answerAButtonPressed(_ sender: UIButton) {
+        Game.shared.gameSession.reply(answer: .answerA)
     }
     
-    @IBAction func answerBButtonPressed(_ sender: Any) {
-        Game.shared.gameSession?.reply(answer: .answerB)
+    @IBAction func answerBButtonPressed(_ sender: UIButton) {
+        Game.shared.gameSession.reply(answer: .answerB)
     }
     
-    @IBAction func answerCButtonPressed(_ sender: Any) {
-        Game.shared.gameSession?.reply(answer: .answerC)
+    @IBAction func answerCButtonPressed(_ sender: UIButton) {
+        Game.shared.gameSession.reply(answer: .answerC)
     }
     
-    @IBAction func answerDButtonPressed(_ sender: Any) {
-        Game.shared.gameSession?.reply(answer: .answerD)
+    @IBAction func answerDButtonPressed(_ sender: UIButton) {
+        Game.shared.gameSession.reply(answer: .answerD)
     }
     
-    @IBAction func fiftyFiftyButtonPressed(_ sender: Any) {
+    @IBAction func fiftyFiftyButtonPressed(_ sender: UIButton) {
     }
     
-    @IBAction func callToFriendButtonPressed(_ sender: Any) {
+    @IBAction func callToFriendButtonPressed(_ sender: UIButton) {
     }
     
-    @IBAction func hallHelpButtonPressed(_ sender: Any) {
+    @IBAction func hallHelpButtonPressed(_ sender: UIButton) {
     }
     
-    @IBAction func marginForErrorButtonPressed(_ sender: Any) {
+    @IBAction func marginForErrorButtonPressed(_ sender: UIButton) {
     }
 }
 
+// MARK: - GameViewControllerDeligate
 extension GameViewController: GameViewControllerDeligate {
 
     func update(with question: Question) {
