@@ -24,7 +24,7 @@ final class Game {
 
     private init() {
         self.records = (try? self.recordsCaretaker.loadRecords()) ?? []
-        self.gameSession = GameSession(with: nil)
+        self.gameSession = GameSession()//with: nil)
     }
     
     func addRecord(_ record: Record) {

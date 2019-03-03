@@ -11,15 +11,14 @@ import Foundation
 final class GameSession {
 
     private var questions: [Question] = []
-
+    
     var numberQuestion = 0
     
-    weak var delegate: GameViewControllerDeligate?
-    
-    init(with delegate: GameViewControllerDeligate?) {
+    var onGameEnd: ((Int, Bool) -> Void)?
+    var onUpdate: ((Question) -> Void)?
+
+    init() {
         self.questions = Questions().listQuestion
-        guard let delegate = delegate else { return }
-        self.delegate = delegate
     }
     
     func start() {
@@ -36,7 +35,7 @@ final class GameSession {
     
     private func askAQuestion() {
         if numberQuestion >= questions.count { return }
-        self.delegate?.update(with: questions[numberQuestion])
+        self.onUpdate?(questions[numberQuestion])
     }
 
     private func levelUp() {
@@ -53,9 +52,9 @@ final class GameSession {
         Game.shared.addRecord(record)
         
         if numberQuestion < questions.count {
-            self.delegate?.gameDidEnd(with: numberQuestion, isWin: false)
+            self.onGameEnd?(numberQuestion, false)
         } else {
-            self.delegate?.gameDidEnd(with: numberQuestion, isWin: true)
+            self.onGameEnd?(numberQuestion, true)
         }
     }
 }

@@ -42,6 +42,4 @@ extension RecordsViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = "\(record.score)"
         return cell
     }
-    
-    
 }

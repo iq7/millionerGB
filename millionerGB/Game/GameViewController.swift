@@ -8,15 +8,6 @@
 
 import UIKit
 
-protocol GameDelegate: class {
-    func gameDidEnd(with result: Int, isWin: Bool)
-}
-
-protocol GameViewControllerDeligate: AnyObject {
-    func update(with question: Question)
-    func gameDidEnd(with result: Int, isWin: Bool)
-}
-
 final class GameViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
@@ -31,12 +22,27 @@ final class GameViewController: UIViewController {
     @IBOutlet weak var hallHelpButton: UIButton!
     @IBOutlet weak var marginForErrorButton: UIButton!
     
-    weak var delegate: GameDelegate?
+    var onGameEnd: ((Int, Bool) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gameSession = GameSession(with: self)
+        let gameSession = GameSession()
+        gameSession.onGameEnd = { [weak self] result, isWin in
+            guard let self = self else { return }
+            self.onGameEnd?(result, isWin)
+            self.dismiss(animated: true, completion: nil)
+        }
+
+        gameSession.onUpdate = { [weak self] question in
+            guard let self = self else { return }
+            self.questionLabel.text = question.textQuestion
+            self.answerAButton.setTitle("A: " + question.arrayAnswers[0], for: .normal)
+            self.answerBButton.setTitle("B: " + question.arrayAnswers[1], for: .normal)
+            self.answerCButton.setTitle("C: " + question.arrayAnswers[2], for: .normal)
+            self.answerDButton.setTitle("D: " + question.arrayAnswers[3], for: .normal)
+        }
+
         Game.shared.gameSession = gameSession
         Game.shared.gameSession.start()
     }
@@ -67,22 +73,5 @@ final class GameViewController: UIViewController {
     }
     
     @IBAction func marginForErrorButtonPressed(_ sender: UIButton) {
-    }
-}
-
-// MARK: - GameViewControllerDeligate
-extension GameViewController: GameViewControllerDeligate {
-
-    func update(with question: Question) {
-        questionLabel.text = question.textQuestion
-        answerAButton.setTitle("A: " + question.arrayAnswers[0], for: .normal)
-        answerBButton.setTitle("B: " + question.arrayAnswers[1], for: .normal)
-        answerCButton.setTitle("C: " + question.arrayAnswers[2], for: .normal)
-        answerDButton.setTitle("D: " + question.arrayAnswers[3], for: .normal)
-    }
-
-    func gameDidEnd(with result: Int, isWin: Bool) {
-        self.delegate?.gameDidEnd(with: result, isWin: isWin)
-        self.dismiss(animated: true, completion: nil)
     }
 }

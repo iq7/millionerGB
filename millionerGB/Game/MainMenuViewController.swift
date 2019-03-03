@@ -25,20 +25,16 @@ final class MainMenuViewController: UIViewController {
         switch segue.identifier {
         case "startGameSegue":
             guard let destination = segue.destination as? GameViewController else { return }
-            destination.delegate = self
+            destination.onGameEnd = { [weak self] result, isWin in
+                guard let self = self else { return }
+                if isWin {
+                    self.gameResultLabel.text = "Красавчик!"
+                } else {
+                    self.gameResultLabel.text = "Вы запоролись на \(result + 1) вопросе."
+                }
+            }
         default:
             break
-        }
-    }
-}
-
-extension MainMenuViewController: GameDelegate {
-    
-    func gameDidEnd(with result: Int, isWin: Bool) {
-        if isWin {
-            self.gameResultLabel.text = "Красавчик!"
-        } else {
-            self.gameResultLabel.text = "Вы запоролись на \(result + 1) вопросе."
         }
     }
 }
