@@ -12,6 +12,8 @@ final class MainMenuViewController: UIViewController {
 
     @IBOutlet weak var startGameButton: UIButton!
     
+    @IBOutlet weak var settingButton: UIButton!
+    
     @IBOutlet weak var resultsGameButton: UIButton!
     
     @IBOutlet weak var gameResultLabel: UILabel!

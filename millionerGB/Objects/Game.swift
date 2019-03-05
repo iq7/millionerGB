@@ -11,10 +11,12 @@ import Foundation
 final class Game {
     
     static let shared = Game()
-    
+
     private let recordsCaretaker = RecordsCareteker()
 
     var gameSession: GameSession
+    
+    var difficulty = Difficulty.normal
     
     private(set) var records: [Record] = [] {
         didSet {
@@ -24,7 +26,7 @@ final class Game {
 
     private init() {
         self.records = (try? self.recordsCaretaker.loadRecords()) ?? []
-        self.gameSession = GameSession()//with: nil)
+        self.gameSession = GameSession()
     }
     
     func addRecord(_ record: Record) {

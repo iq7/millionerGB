@@ -45,6 +45,7 @@ final class GameViewController: UIViewController {
 
         Game.shared.gameSession = gameSession
         Game.shared.gameSession.start()
+        print("\(Game.shared.difficulty)")
     }
 
     @IBAction func answerAButtonPressed(_ sender: UIButton) {

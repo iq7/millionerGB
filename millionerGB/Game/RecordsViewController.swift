@@ -29,6 +29,7 @@ final class RecordsViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension RecordsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Game.shared.records.count

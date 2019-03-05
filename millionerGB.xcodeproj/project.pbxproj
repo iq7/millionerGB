@@ -21,6 +21,8 @@
 		D9ECC1D4222AC8C600BA0410 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1D3222AC8C600BA0410 /* RecordsViewController.swift */; };
 		D9ECC1D6222ACF2000BA0410 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1D5222ACF2000BA0410 /* Record.swift */; };
 		D9ECC1D9222BDFC200BA0410 /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1D8222BDFC200BA0410 /* RecordsCaretaker.swift */; };
+		D9ECC1DE222EF4CC00BA0410 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1DD222EF4CC00BA0410 /* SettingsViewController.swift */; };
+		D9ECC1E0222EF63300BA0410 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1DF222EF63300BA0410 /* Difficulty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		D9ECC1D3222AC8C600BA0410 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		D9ECC1D5222ACF2000BA0410 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		D9ECC1D8222BDFC200BA0410 /* RecordsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
+		D9ECC1DD222EF4CC00BA0410 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D9ECC1DF222EF63300BA0410 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 				D9ECC1CF222AA0A200BA0410 /* Game.swift */,
 				D9ECC1CD222A737B00BA0410 /* Question.swift */,
 				D9ECC1D5222ACF2000BA0410 /* Record.swift */,
+				D9ECC1DF222EF63300BA0410 /* Difficulty.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				D9E9FEE922294B6F00203990 /* GameViewController.swift */,
 				D9ECC1CB222A674400BA0410 /* MainMenuViewController.swift */,
 				D9ECC1D3222AC8C600BA0410 /* RecordsViewController.swift */,
+				D9ECC1DD222EF4CC00BA0410 /* SettingsViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -312,6 +318,8 @@
 				D9ECC1CC222A674400BA0410 /* MainMenuViewController.swift in Sources */,
 				D9ECC1D9222BDFC200BA0410 /* RecordsCaretaker.swift in Sources */,
 				D9ECC1D4222AC8C600BA0410 /* RecordsViewController.swift in Sources */,
+				D9ECC1DE222EF4CC00BA0410 /* SettingsViewController.swift in Sources */,
+				D9ECC1E0222EF63300BA0410 /* Difficulty.swift in Sources */,
 				D9ECC1D6222ACF2000BA0410 /* Record.swift in Sources */,
 				D9ECC1D0222AA0A200BA0410 /* Game.swift in Sources */,
 				D9ECC1CE222A737B00BA0410 /* Question.swift in Sources */,
