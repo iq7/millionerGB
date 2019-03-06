@@ -17,7 +17,7 @@ final class Game {
     var gameSession: GameSession
     
     var difficulty = Difficulty.normal
-    
+
     private(set) var records: [Record] = [] {
         didSet {
             try? self.recordsCaretaker.saveRecords(self.records)

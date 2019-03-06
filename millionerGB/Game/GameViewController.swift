@@ -28,6 +28,9 @@ final class GameViewController: UIViewController {
         super.viewDidLoad()
         
         let gameSession = GameSession()
+        gameSession.initQuestions()
+        Game.shared.gameSession = gameSession
+
         gameSession.onGameEnd = { [weak self] result, isWin in
             guard let self = self else { return }
             self.onGameEnd?(result, isWin)
@@ -42,10 +45,8 @@ final class GameViewController: UIViewController {
             self.answerCButton.setTitle("C: " + question.arrayAnswers[2], for: .normal)
             self.answerDButton.setTitle("D: " + question.arrayAnswers[3], for: .normal)
         }
-
-        Game.shared.gameSession = gameSession
+        
         Game.shared.gameSession.start()
-        print("\(Game.shared.difficulty)")
     }
 
     @IBAction func answerAButtonPressed(_ sender: UIButton) {

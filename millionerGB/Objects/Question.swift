@@ -37,6 +37,7 @@ final class Questions {
     }
 
     private func questionsInit() {
+        print("questionsInit")
         listQuestion.append(Question(textQuestion: "Как правильно закончить пословицу: «Не откладывай на завтра то, что можно…»?",
                                   arrayAnswers: ["сделать сегодня", "сделать послезавтра", "сделать через месяц", "никогда не делать"],
                                   answer: .answerA))

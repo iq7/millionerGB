@@ -23,6 +23,9 @@
 		D9ECC1D9222BDFC200BA0410 /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1D8222BDFC200BA0410 /* RecordsCaretaker.swift */; };
 		D9ECC1DE222EF4CC00BA0410 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1DD222EF4CC00BA0410 /* SettingsViewController.swift */; };
 		D9ECC1E0222EF63300BA0410 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC1DF222EF63300BA0410 /* Difficulty.swift */; };
+		D9F5870E222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5870B222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift */; };
+		D9F5870F222F208E00B83BC3 /* CreateQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5870C222F208E00B83BC3 /* CreateQuestionsStrategy.swift */; };
+		D9F58710222F208E00B83BC3 /* RandomCreateQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5870D222F208E00B83BC3 /* RandomCreateQuestionsStrategy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		D9ECC1D8222BDFC200BA0410 /* RecordsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
 		D9ECC1DD222EF4CC00BA0410 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D9ECC1DF222EF63300BA0410 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		D9F5870B222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequentialCreateQuestionsStrategy.swift; sourceTree = "<group>"; };
+		D9F5870C222F208E00B83BC3 /* CreateQuestionsStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateQuestionsStrategy.swift; sourceTree = "<group>"; };
+		D9F5870D222F208E00B83BC3 /* RandomCreateQuestionsStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomCreateQuestionsStrategy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 		D9E9FEE622294B6F00203990 /* millionerGB */ = {
 			isa = PBXGroup;
 			children = (
+				D9F5870A222F208E00B83BC3 /* Strategies */,
 				D9ECC1DC222BE3B200BA0410 /* Game */,
 				D9ECC1D7222BD7C200BA0410 /* Caretaker */,
 				D9ECC1DA222BE36100BA0410 /* Fundamental */,
@@ -182,6 +189,16 @@
 				D9ECC1DD222EF4CC00BA0410 /* SettingsViewController.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		D9F5870A222F208E00B83BC3 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				D9F5870C222F208E00B83BC3 /* CreateQuestionsStrategy.swift */,
+				D9F5870B222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift */,
+				D9F5870D222F208E00B83BC3 /* RandomCreateQuestionsStrategy.swift */,
+			);
+			path = Strategies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,11 +335,14 @@
 				D9ECC1CC222A674400BA0410 /* MainMenuViewController.swift in Sources */,
 				D9ECC1D9222BDFC200BA0410 /* RecordsCaretaker.swift in Sources */,
 				D9ECC1D4222AC8C600BA0410 /* RecordsViewController.swift in Sources */,
+				D9F5870E222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift in Sources */,
 				D9ECC1DE222EF4CC00BA0410 /* SettingsViewController.swift in Sources */,
+				D9F58710222F208E00B83BC3 /* RandomCreateQuestionsStrategy.swift in Sources */,
 				D9ECC1E0222EF63300BA0410 /* Difficulty.swift in Sources */,
 				D9ECC1D6222ACF2000BA0410 /* Record.swift in Sources */,
 				D9ECC1D0222AA0A200BA0410 /* Game.swift in Sources */,
 				D9ECC1CE222A737B00BA0410 /* Question.swift in Sources */,
+				D9F5870F222F208E00B83BC3 /* CreateQuestionsStrategy.swift in Sources */,
 				D9E9FEEA22294B6F00203990 /* GameViewController.swift in Sources */,
 				D9ECC1D2222AA10300BA0410 /* GameSession.swift in Sources */,
 				D9E9FEE822294B6F00203990 /* AppDelegate.swift in Sources */,

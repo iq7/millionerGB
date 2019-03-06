@@ -16,6 +16,13 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        switch Game.shared.difficulty {
+        case .normal:
+            self.difficultySegmentedControl.selectedSegmentIndex = 0
+        case .hard:
+            self.difficultySegmentedControl.selectedSegmentIndex = 1
+        }
     }
     
     @IBAction func closeButtonPressed(_ sender: UIButton) {
