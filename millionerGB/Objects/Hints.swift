@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct Hints {
+    var fiftyFiftyHint = true
+    var callFriend = true
+    var auditoryHelp = true
+    var marginForError = true
+}
+

@@ -7,3 +7,27 @@
 //
 
 import Foundation
+
+final class HintUsageFacade {
+    
+    let currentQuestion: Question
+    
+    init(currentQuestion: Question) {
+        self.currentQuestion = currentQuestion
+    }
+
+    // MARK: - Methods
+    
+    func callFriend() {
+    }
+    
+    func useAuditoryHelp() {
+    }
+    
+    func use50to50Hint() {
+    }
+    
+    func useMarginForError() {
+    }
+    
+}

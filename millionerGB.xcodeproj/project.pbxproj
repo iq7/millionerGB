@@ -26,6 +26,12 @@
 		D9F5870E222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5870B222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift */; };
 		D9F5870F222F208E00B83BC3 /* CreateQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5870C222F208E00B83BC3 /* CreateQuestionsStrategy.swift */; };
 		D9F58710222F208E00B83BC3 /* RandomCreateQuestionsStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5870D222F208E00B83BC3 /* RandomCreateQuestionsStrategy.swift */; };
+		D9F58712222FF7A000B83BC3 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F58711222FF7A000B83BC3 /* Questions.swift */; };
+		D9F58714222FF7DE00B83BC3 /* NumberAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F58713222FF7DE00B83BC3 /* NumberAnswer.swift */; };
+		D9F58716222FF82000B83BC3 /* Hints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F58715222FF82000B83BC3 /* Hints.swift */; };
+		D9F5871A2230068000B83BC3 /* VisibleAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F587192230068000B83BC3 /* VisibleAnswers.swift */; };
+		D9F5871C2236E2B700B83BC3 /* HintUsageFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5871B2236E2B700B83BC3 /* HintUsageFacade.swift */; };
+		D9F5871E2236F99B00B83BC3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5871D2236F99B00B83BC3 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +77,12 @@
 		D9F5870B222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequentialCreateQuestionsStrategy.swift; sourceTree = "<group>"; };
 		D9F5870C222F208E00B83BC3 /* CreateQuestionsStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateQuestionsStrategy.swift; sourceTree = "<group>"; };
 		D9F5870D222F208E00B83BC3 /* RandomCreateQuestionsStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomCreateQuestionsStrategy.swift; sourceTree = "<group>"; };
+		D9F58711222FF7A000B83BC3 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		D9F58713222FF7DE00B83BC3 /* NumberAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAnswer.swift; sourceTree = "<group>"; };
+		D9F58715222FF82000B83BC3 /* Hints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hints.swift; sourceTree = "<group>"; };
+		D9F587192230068000B83BC3 /* VisibleAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleAnswers.swift; sourceTree = "<group>"; };
+		D9F5871B2236E2B700B83BC3 /* HintUsageFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintUsageFacade.swift; sourceTree = "<group>"; };
+		D9F5871D2236F99B00B83BC3 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				D9E9FEE722294B6F00203990 /* AppDelegate.swift */,
+				D9F5871D2236F99B00B83BC3 /* Observable.swift */,
 			);
 			path = Fundamental;
 			sourceTree = "<group>";
@@ -175,6 +188,10 @@
 				D9ECC1CD222A737B00BA0410 /* Question.swift */,
 				D9ECC1D5222ACF2000BA0410 /* Record.swift */,
 				D9ECC1DF222EF63300BA0410 /* Difficulty.swift */,
+				D9F58711222FF7A000B83BC3 /* Questions.swift */,
+				D9F58713222FF7DE00B83BC3 /* NumberAnswer.swift */,
+				D9F58715222FF82000B83BC3 /* Hints.swift */,
+				D9F587192230068000B83BC3 /* VisibleAnswers.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -187,6 +204,7 @@
 				D9ECC1CB222A674400BA0410 /* MainMenuViewController.swift */,
 				D9ECC1D3222AC8C600BA0410 /* RecordsViewController.swift */,
 				D9ECC1DD222EF4CC00BA0410 /* SettingsViewController.swift */,
+				D9F5871B2236E2B700B83BC3 /* HintUsageFacade.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -335,14 +353,20 @@
 				D9ECC1CC222A674400BA0410 /* MainMenuViewController.swift in Sources */,
 				D9ECC1D9222BDFC200BA0410 /* RecordsCaretaker.swift in Sources */,
 				D9ECC1D4222AC8C600BA0410 /* RecordsViewController.swift in Sources */,
+				D9F58712222FF7A000B83BC3 /* Questions.swift in Sources */,
+				D9F58716222FF82000B83BC3 /* Hints.swift in Sources */,
 				D9F5870E222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift in Sources */,
 				D9ECC1DE222EF4CC00BA0410 /* SettingsViewController.swift in Sources */,
+				D9F58714222FF7DE00B83BC3 /* NumberAnswer.swift in Sources */,
 				D9F58710222F208E00B83BC3 /* RandomCreateQuestionsStrategy.swift in Sources */,
 				D9ECC1E0222EF63300BA0410 /* Difficulty.swift in Sources */,
+				D9F5871A2230068000B83BC3 /* VisibleAnswers.swift in Sources */,
 				D9ECC1D6222ACF2000BA0410 /* Record.swift in Sources */,
+				D9F5871C2236E2B700B83BC3 /* HintUsageFacade.swift in Sources */,
 				D9ECC1D0222AA0A200BA0410 /* Game.swift in Sources */,
 				D9ECC1CE222A737B00BA0410 /* Question.swift in Sources */,
 				D9F5870F222F208E00B83BC3 /* CreateQuestionsStrategy.swift in Sources */,
+				D9F5871E2236F99B00B83BC3 /* Observable.swift in Sources */,
 				D9E9FEEA22294B6F00203990 /* GameViewController.swift in Sources */,
 				D9ECC1D2222AA10300BA0410 /* GameSession.swift in Sources */,
 				D9E9FEE822294B6F00203990 /* AppDelegate.swift in Sources */,

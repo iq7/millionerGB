@@ -40,7 +40,7 @@ extension RecordsViewController: UITableViewDataSource {
         let record = Game.shared.records[indexPath.row]
        
         cell.textLabel?.text = RecordsViewController.dateFormatter.string(from: record.date)
-        cell.detailTextLabel?.text = "\(record.score)"
+        cell.detailTextLabel?.text = "\(record.score)%"
         return cell
     }
 }

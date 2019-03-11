@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct VisibleAnswers {
+    var enabledA = true
+    var enabledB = true
+    var enabledC = true
+    var enabledD = true
+}

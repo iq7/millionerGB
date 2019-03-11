@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+enum numberAnswer: Int {
+    case answerA = 0
+    case answerB = 1
+    case answerC = 2
+    case answerD = 3
+}
