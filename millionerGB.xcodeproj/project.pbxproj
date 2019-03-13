@@ -35,6 +35,7 @@
 		D9F587202237D81800B83BC3 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5871F2237D81800B83BC3 /* AddQuestionViewController.swift */; };
 		D9F5872222380E2500B83BC3 /* NewQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5872122380E2500B83BC3 /* NewQuestionTableViewCell.swift */; };
 		D9F587242238E05200B83BC3 /* QuestionCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F587232238E05200B83BC3 /* QuestionCaretaker.swift */; };
+		D9F5872822392C2000B83BC3 /* AddQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5872722392C2000B83BC3 /* AddQuestionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		D9F5871F2237D81800B83BC3 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
 		D9F5872122380E2500B83BC3 /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		D9F587232238E05200B83BC3 /* QuestionCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCaretaker.swift; sourceTree = "<group>"; };
+		D9F5872722392C2000B83BC3 /* AddQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				D9ECC1DD222EF4CC00BA0410 /* SettingsViewController.swift */,
 				D9F5871B2236E2B700B83BC3 /* HintUsageFacade.swift */,
 				D9F5871F2237D81800B83BC3 /* AddQuestionViewController.swift */,
+				D9F5872722392C2000B83BC3 /* AddQuestionVC.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				D9F5871A2230068000B83BC3 /* VisibleAnswers.swift in Sources */,
 				D9ECC1D6222ACF2000BA0410 /* Record.swift in Sources */,
 				D9F5871C2236E2B700B83BC3 /* HintUsageFacade.swift in Sources */,
+				D9F5872822392C2000B83BC3 /* AddQuestionVC.swift in Sources */,
 				D9ECC1D0222AA0A200BA0410 /* Game.swift in Sources */,
 				D9ECC1CE222A737B00BA0410 /* Question.swift in Sources */,
 				D9F5870F222F208E00B83BC3 /* CreateQuestionsStrategy.swift in Sources */,

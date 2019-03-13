@@ -27,7 +27,7 @@ class AddQuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.questionList = try? self.questionCaretaker.loadQuestion()
+        self.questionList = try? self.questionCaretaker.loadQuestions()
         let question = Question()
 
 //        clearQuestions()
