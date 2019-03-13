@@ -16,7 +16,9 @@ final class QuestionCaretaker {
     private let questionKey = "questionKey"
     
     func saveQuestion(_ question: Question) throws {
-        if question.textQuestion == "" || question.answer < 0 || question.answer > 3 { return }
+        if question.textQuestion == "" { return }
+        if question.answer < 0 { return }
+        if question.answer > 3 { return }
         for answer in question.arrayAnswers {
             if answer == "" { return }
         }

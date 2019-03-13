@@ -30,13 +30,17 @@ class AddQuestionVC: UIViewController {
         self.answerBTextField.text = self.question?.arrayAnswers[1]
         self.answerCTextField.text = self.question?.arrayAnswers[2]
         self.answerDTextField.text = self.question?.arrayAnswers[3]
-        self.rightAnswer.text = "\(String(describing: self.question?.answer))"
+        guard let answer = self.question?.answer else { return }
+        self.rightAnswer.text = String(describing: answer)
     }
 
     @IBAction func addQuestionButtonPressent(_ sender: UIButton) {
-        self.dismiss(animated: true) { [weak self] in
-            guard let self = self, let question = self.question else { return }
+        guard let answer = Int(self.rightAnswer?.text ?? "") else { return }
+        question = Question(textQuestion: self.questionTextField.text ?? "", arrayAnswers: [self.answerATextField.text ?? "", self.answerBTextField.text ?? "", self.answerCTextField.text ?? "", self.answerDTextField.text ?? ""], answer: answer)
+
+        if let question = self.question {
             try? self.questionCaretaker.saveQuestion(question)
         }
+        self.dismiss(animated: true, completion: nil)
     }
 }
