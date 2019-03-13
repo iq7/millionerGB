@@ -8,15 +8,16 @@
 
 import Foundation
 
-struct Question {
+//TODO: разобраться с Codable
+struct Question: Codable {
     let textQuestion: String
     let arrayAnswers: [String]
-    let answer: numberAnswer
-    
-    init(textQuestion: String, arrayAnswers: [String], answer: numberAnswer)
-    {
+    let answer: Int //numberAnswer
+
+    init(textQuestion: String = "", arrayAnswers: [String] = ["", "", "", ""], answer: Int = 0) {//numberAnswer = .answerA) {
         self.textQuestion = textQuestion
         self.arrayAnswers = arrayAnswers
         self.answer = answer
     }
 }
+

@@ -19,19 +19,19 @@ final class Questions {
     private func questionsInit() {
         listQuestion.append(Question(textQuestion: "Как правильно закончить пословицу: «Не откладывай на завтра то, что можно…»?",
                                      arrayAnswers: ["сделать сегодня", "сделать послезавтра", "сделать через месяц", "никогда не делать"],
-                                     answer: .answerA))
+                                     answer: 0))//.answerA))
         listQuestion.append(Question(textQuestion: "Что говорит человек, когда замечает нечто необычное?",
                                      arrayAnswers: ["попало в лоб", "залетело в рот", "накапало в уши", "бросилось в глаза"],
-                                     answer: .answerD))
+                                     answer: 3))//.answerD))
         listQuestion.append(Question(textQuestion: "Что помогает туристу ориентироваться в незнакомом городе?",
                                      arrayAnswers: ["путепровод", "путеукладчик", "путеводитель", "путеводная звезда"],
-                                     answer: .answerC))
+                                     answer: 2))//.answerC))
         listQuestion.append(Question(textQuestion: "Какой наряд прославил баснописец Крылов?",
                                      arrayAnswers: ["тришкин кафтан", "ивашкин армяк", "прошкин зипун", "машкин сарафан"],
-                                     answer: .answerA))
+                                     answer: 0))//.answerA))
         listQuestion.append(Question(textQuestion: "Как звали старшую сестру императора Петра Первого?",
                                      arrayAnswers: ["Вера", "Надежда", "Любовь", "Софья"],
-                                     answer: .answerD))
+                                     answer: 3))//.answerD))
         /*
          listQuestion.append(Question(textQuestion: "Что не бывает морским?",
          arrayAnswers: ["рельс", "огурец", "гребешок", "узел"],

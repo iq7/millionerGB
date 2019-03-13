@@ -94,22 +94,22 @@ final class GameViewController: UIViewController {
     }
 
     @IBAction func answerAButtonPressed(_ sender: UIButton) {
-        Game.shared.gameSession.reply(answer: .answerA)
+        Game.shared.gameSession.reply(answer: 0)//.answerA)
         updateVisibleButton()
     }
     
     @IBAction func answerBButtonPressed(_ sender: UIButton) {
-        Game.shared.gameSession.reply(answer: .answerB)
+        Game.shared.gameSession.reply(answer: 1)//.answerB)
         updateVisibleButton()
     }
     
     @IBAction func answerCButtonPressed(_ sender: UIButton) {
-        Game.shared.gameSession.reply(answer: .answerC)
+        Game.shared.gameSession.reply(answer: 2)//.answerC)
         updateVisibleButton()
     }
     
     @IBAction func answerDButtonPressed(_ sender: UIButton) {
-        Game.shared.gameSession.reply(answer: .answerD)
+        Game.shared.gameSession.reply(answer: 3)//.answerD)
         updateVisibleButton()
     }
     

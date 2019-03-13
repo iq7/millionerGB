@@ -32,6 +32,9 @@
 		D9F5871A2230068000B83BC3 /* VisibleAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F587192230068000B83BC3 /* VisibleAnswers.swift */; };
 		D9F5871C2236E2B700B83BC3 /* HintUsageFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5871B2236E2B700B83BC3 /* HintUsageFacade.swift */; };
 		D9F5871E2236F99B00B83BC3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5871D2236F99B00B83BC3 /* Observable.swift */; };
+		D9F587202237D81800B83BC3 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5871F2237D81800B83BC3 /* AddQuestionViewController.swift */; };
+		D9F5872222380E2500B83BC3 /* NewQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F5872122380E2500B83BC3 /* NewQuestionTableViewCell.swift */; };
+		D9F587242238E05200B83BC3 /* QuestionCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F587232238E05200B83BC3 /* QuestionCaretaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		D9F587192230068000B83BC3 /* VisibleAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleAnswers.swift; sourceTree = "<group>"; };
 		D9F5871B2236E2B700B83BC3 /* HintUsageFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintUsageFacade.swift; sourceTree = "<group>"; };
 		D9F5871D2236F99B00B83BC3 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		D9F5871F2237D81800B83BC3 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
+		D9F5872122380E2500B83BC3 /* NewQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		D9F587232238E05200B83BC3 /* QuestionCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCaretaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				D9ECC1D8222BDFC200BA0410 /* RecordsCaretaker.swift */,
+				D9F587232238E05200B83BC3 /* QuestionCaretaker.swift */,
 			);
 			path = Caretaker;
 			sourceTree = "<group>";
@@ -192,6 +199,7 @@
 				D9F58713222FF7DE00B83BC3 /* NumberAnswer.swift */,
 				D9F58715222FF82000B83BC3 /* Hints.swift */,
 				D9F587192230068000B83BC3 /* VisibleAnswers.swift */,
+				D9F5872122380E2500B83BC3 /* NewQuestionTableViewCell.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 				D9ECC1D3222AC8C600BA0410 /* RecordsViewController.swift */,
 				D9ECC1DD222EF4CC00BA0410 /* SettingsViewController.swift */,
 				D9F5871B2236E2B700B83BC3 /* HintUsageFacade.swift */,
+				D9F5871F2237D81800B83BC3 /* AddQuestionViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -355,6 +364,9 @@
 				D9ECC1D4222AC8C600BA0410 /* RecordsViewController.swift in Sources */,
 				D9F58712222FF7A000B83BC3 /* Questions.swift in Sources */,
 				D9F58716222FF82000B83BC3 /* Hints.swift in Sources */,
+				D9F587202237D81800B83BC3 /* AddQuestionViewController.swift in Sources */,
+				D9F587242238E05200B83BC3 /* QuestionCaretaker.swift in Sources */,
+				D9F5872222380E2500B83BC3 /* NewQuestionTableViewCell.swift in Sources */,
 				D9F5870E222F208E00B83BC3 /* SequentialCreateQuestionsStrategy.swift in Sources */,
 				D9ECC1DE222EF4CC00BA0410 /* SettingsViewController.swift in Sources */,
 				D9F58714222FF7DE00B83BC3 /* NumberAnswer.swift in Sources */,

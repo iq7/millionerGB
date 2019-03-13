@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum numberAnswer: Int {
+enum numberAnswer: Int, CodingKey {
     case answerA = 0
     case answerB = 1
     case answerC = 2

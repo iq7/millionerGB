@@ -58,7 +58,7 @@ final class GameSession {
         var repeatCount = 2
         while repeatCount > 0 {
             let randomAnswer = Int.random(in: 0...3)
-            if randomAnswer != questions[self.numberQuestion.value].answer.rawValue {
+            if randomAnswer != questions[self.numberQuestion.value].answer {//}.rawValue {
                 switch randomAnswer {
                 case 0:
                     if self.visibleAnswers.enabledA {
@@ -174,20 +174,22 @@ final class GameSession {
         self.isUseMarginForError = true
     }
 
-    func reply(answer: numberAnswer) {
+    func reply(answer: Int) {//numberAnswer) {
         if questions?[self.numberQuestion.value].answer == answer {
             levelUp()
         } else {
             if isUseMarginForError {
                 switch answer {
-                case .answerA:
+                case 0://.answerA:
                     self.visibleAnswers.enabledA = false
-                case .answerB:
+                case 1://.answerB:
                     self.visibleAnswers.enabledB = false
-                case .answerC:
+                case 2://.answerC:
                     self.visibleAnswers.enabledC = false
-                case .answerD:
+                case 3://.answerD:
                     self.visibleAnswers.enabledD = false
+                default:
+                    break
                 }
                 isUseMarginForError = false
                 self.onShowHint?("Ошибочка!", "Попробуй еще.")
