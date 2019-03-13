@@ -11,8 +11,14 @@ import Foundation
 final class Questions {
     
     var listQuestion: [Question] = []
-    
+
+    private let questionCaretaker = QuestionCaretaker()
+    private let questionKey = "questionKey"
+    private var question: Question?
+
     init() {
+        self.question = try? self.questionCaretaker.loadQuestion()
+
         questionsInit()
     }
     
@@ -32,6 +38,8 @@ final class Questions {
         listQuestion.append(Question(textQuestion: "Как звали старшую сестру императора Петра Первого?",
                                      arrayAnswers: ["Вера", "Надежда", "Любовь", "Софья"],
                                      answer: 3))//.answerD))
+        guard let question = self.question else { return }
+        listQuestion.append(question)
         /*
          listQuestion.append(Question(textQuestion: "Что не бывает морским?",
          arrayAnswers: ["рельс", "огурец", "гребешок", "узел"],
@@ -65,4 +73,5 @@ final class Questions {
          answer: .answerA))
          */
     }
+
 }
